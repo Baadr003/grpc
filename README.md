@@ -34,7 +34,39 @@ Ce projet implémente un service bancaire utilisant Spring Boot et gRPC, offrant
 - Stockage en mémoire avec la base de données H2
 
 ## Structure du Projet
-grpc2/ ├── src/ │ ├── main/ │ │ ├── java/ │ │ │ └── ma/projet/grpc/ │ │ │ ├── Grpc2Application.java │ │ │ ├── controllers/ │ │ │ │ └── CompteServiceImpl.java │ │ │ ├── entities/ │ │ │ │ └── Compte.java │ │ │ ├── repositories/ │ │ │ │ └── CompteRepository.java │ │ │ ├── services/ │ │ │ │ └── CompteService.java │ │ │ └── stubs/ │ │ │ ├── CompteOuterClass.java │ │ │ ├── CompteRequest.java │ │ │ ├── DeleteCompteRequest.java │ │ │ ├── GetAllComptesRequest.java │ │ │ ├── GetComptesByTypeRequest.java │ │ │ ├── SaveCompteRequest.java │ │ │ └── ... │ │ └── resources/ │ │ ├── application.properties │ │ └── compte.proto │ └── test/ │ └── java/ │ └── ma/projet/grpc/ │ └── Grpc2ApplicationTests.java └── pom.xml
+
+grpc2/
+```
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── ma/projet/grpc/
+│   │   │       ├── Grpc2Application.java
+│   │   │       ├── controllers/
+│   │   │       │   └── CompteServiceImpl.java
+│   │   │       ├── entities/
+│   │   │       │   └── Compte.java
+│   │   │       ├── repositories/
+│   │   │       │   └── CompteRepository.java
+│   │   │       ├── services/
+│   │   │       │   └── CompteService.java
+│   │   │       └── stubs/
+│   │   │           ├── CompteOuterClass.java
+│   │   │           ├── CompteRequest.java
+│   │   │           ├── DeleteCompteRequest.java
+│   │   │           ├── GetAllComptesRequest.java
+│   │   │           ├── GetComptesByTypeRequest.java
+│   │   │           ├── SaveCompteRequest.java
+│   │   │           └── ...
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── compte.proto
+│   └── test/
+│       └── java/
+│           └── ma/projet/grpc/
+│               └── Grpc2ApplicationTests.java
+└── pom.xml
+```
 
 ## Définition du Service gRPC
 
@@ -49,31 +81,21 @@ service CompteService {
   rpc ComptesByType(GetComptesByTypeRequest) returns (GetComptesByTypeResponse);
   rpc DeleteCompte(DeleteCompteRequest) returns (DeleteCompteResponse);
 }
-
-
-
-## Définition du Service gRPC
-
-Le fichier `compte.proto` définit les services suivants :
-
-```protobuf
-service CompteService {
-  rpc AllComptes(GetAllComptesRequest) returns (GetAllComptesResponse);
-  rpc CompteById(GetCompteByIdRequest) returns (GetCompteByIdResponse);
-  rpc TotalSolde(GetTotalSoldeRequest) returns (GetTotalSoldeResponse);
-  rpc SaveCompte(SaveCompteRequest) returns (SaveCompteResponse);
-  rpc ComptesByType(GetComptesByTypeRequest) returns (GetComptesByTypeResponse);
-  rpc DeleteCompte(DeleteCompteRequest) returns (DeleteCompteResponse);
-}
-
-
+```
 
 ## Dépendances
 
--Spring Boot Starter Data JPA
--Spring Boot Starter Web
--Spring Boot DevTools
--H2 Database
--gRPC Spring Boot Starter
--Protocol Buffers
--Lombok
+- Spring Boot Starter Data JPA
+- Spring Boot Starter Web
+- Spring Boot DevTools
+- H2 Database
+- gRPC Spring Boot Starter
+- Protocol Buffers
+- Lombok
+
+## Vidéo démonstrative
+
+
+https://github.com/user-attachments/assets/85a4e8f3-9265-43fa-addf-3586dfc72871
+
+
