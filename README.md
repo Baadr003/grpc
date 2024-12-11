@@ -49,3 +49,26 @@ service CompteService {
   rpc ComptesByType(GetComptesByTypeRequest) returns (GetComptesByTypeResponse);
   rpc DeleteCompte(DeleteCompteRequest) returns (DeleteCompteResponse);
 }
+
+## Définition du Service gRPC
+
+Le fichier `compte.proto` définit les services suivants :
+
+```protobuf
+service CompteService {
+  rpc AllComptes(GetAllComptesRequest) returns (GetAllComptesResponse);
+  rpc CompteById(GetCompteByIdRequest) returns (GetCompteByIdResponse);
+  rpc TotalSolde(GetTotalSoldeRequest) returns (GetTotalSoldeResponse);
+  rpc SaveCompte(SaveCompteRequest) returns (SaveCompteResponse);
+  rpc ComptesByType(GetComptesByTypeRequest) returns (GetComptesByTypeResponse);
+  rpc DeleteCompte(DeleteCompteRequest) returns (DeleteCompteResponse);
+}
+## Dépendances
+
+-Spring Boot Starter Data JPA
+-Spring Boot Starter Web
+-Spring Boot DevTools
+-H2 Database
+-gRPC Spring Boot Starter
+-Protocol Buffers
+-Lombok
