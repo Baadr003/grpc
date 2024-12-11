@@ -50,6 +50,8 @@ service CompteService {
   rpc DeleteCompte(DeleteCompteRequest) returns (DeleteCompteResponse);
 }
 
+
+
 ## Définition du Service gRPC
 
 Le fichier `compte.proto` définit les services suivants :
@@ -63,6 +65,8 @@ service CompteService {
   rpc ComptesByType(GetComptesByTypeRequest) returns (GetComptesByTypeResponse);
   rpc DeleteCompte(DeleteCompteRequest) returns (DeleteCompteResponse);
 }
+
+
 
 ## Dépendances
 
