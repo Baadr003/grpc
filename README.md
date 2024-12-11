@@ -63,6 +63,7 @@ service CompteService {
   rpc ComptesByType(GetComptesByTypeRequest) returns (GetComptesByTypeResponse);
   rpc DeleteCompte(DeleteCompteRequest) returns (DeleteCompteResponse);
 }
+
 ## Dépendances
 
 -Spring Boot Starter Data JPA
